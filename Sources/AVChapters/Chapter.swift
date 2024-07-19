@@ -1,8 +1,8 @@
 import AVFoundation
 
 public struct Chapter {
-    public let name: String
-    public let time: CMTimeRange
+    public var name: String
+    public var time: CMTimeRange
 
     /// Creates a new chapter with the given name and time.
     ///
