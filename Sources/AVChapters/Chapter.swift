@@ -72,8 +72,10 @@ public struct Chapter {
             )
         }
 
-        try blockBuffer.withUnsafeMutableBytes(atOffset: 2) { dst in
-            utf8Data.withUnsafeBytes { src in dst.copyMemory(from: src) }
+        if !utf8Data.isEmpty {
+            try blockBuffer.withUnsafeMutableBytes(atOffset: 2) { dst in
+                utf8Data.withUnsafeBytes { src in dst.copyMemory(from: src) }
+            }
         }
 
         return blockBuffer
